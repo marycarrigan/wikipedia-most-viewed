@@ -16,7 +16,7 @@ const useMostViewedGet = (date, number, countryCode) => {
     setLoading(true);
     const formattedDate = date.toFormat("yyyy/LL/dd");
     
-    const path = countryCode ? `top-per-country/${countryCode}` : `top/en.wikipedia`;
+    const path = countryCode != 'ALL' ? `top-per-country/${countryCode}` : `top/en.wikipedia`;
 
     const url = `https://wikimedia.org/api/rest_v1/metrics/pageviews/${path}/all-access/${formattedDate}`;
 

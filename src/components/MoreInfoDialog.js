@@ -4,7 +4,6 @@ import {
   DialogTitle,
   Grid,
   Box,
-  Divider,
   CircularProgress,
 } from "@mui/material";
 import { DateTime } from "luxon";
@@ -14,7 +13,6 @@ const MoreInfoDialog = ({
   open,
   onClose,
   articleViewsResults,
-  articleTextResults,
   loading,
 }) => {
   return (
@@ -46,15 +44,6 @@ const MoreInfoDialog = ({
                 </Grid>
               </>
             ))}
-            <Grid item xs={12}>
-              <Divider />
-            </Grid>
-            <Grid item xs={12}>
-              <Box fontWeight="fontWeightMedium" pb={1}>
-                Introduction
-              </Box>
-              {articleTextResults}
-            </Grid>
           </Grid>
         )}
       </DialogContent>

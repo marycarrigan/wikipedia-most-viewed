@@ -20,7 +20,6 @@ import { DateTime } from "luxon";
 import ArticleCard from "./components/ArticleCard";
 import MoreInfoDialog from "./components/MoreInfoDialog";
 import useArticleViewsGet from "./hooks/useArticleViewsGet";
-import useArticleTextGet from "./hooks/useArticleTextGet";
 import countries from "./countries";
 
 function App() {
@@ -30,13 +29,20 @@ function App() {
 
   const [date, setDate] = useState(yesterday);
   const [numResults, setNumResults] = useState(100);
-  const [countryCode, setCountryCode] = useState("");
+  const [countryCode, setCountryCode] = useState("ALL");
   const [selectedArticle, setSelectedArticle] = useState("");
   const [moreInfoOpen, setMoreInfoOpen] = useState(false);
 
-  const { results: mostViewsResults, doGet: doGetMostViews, loading: mostViewsLoading } = useMostViewedGet(date, numResults, countryCode);
-  const { results: articleViewsResults, loading: articleViewsLoading, doGet: doGetArticleViews } = useArticleViewsGet(selectedArticle);
-  const { results: articleTextResults, loading: articleTextLoading, doGet: doGetArticleText } = useArticleTextGet(selectedArticle);
+  const {
+    results: mostViewsResults,
+    doGet: doGetMostViews,
+    loading: mostViewsLoading,
+  } = useMostViewedGet(date, numResults, countryCode);
+  const {
+    results: articleViewsResults,
+    loading: articleViewsLoading,
+    doGet: doGetArticleViews,
+  } = useArticleViewsGet(selectedArticle);
 
   useEffect(() => {
     doGetMostViews();
@@ -51,7 +57,6 @@ function App() {
     setSelectedArticle(article);
     setMoreInfoOpen(true);
     doGetArticleViews(article);
-    doGetArticleText(article);
   };
 
   return (
@@ -85,8 +90,13 @@ function App() {
               onChange={(event) => setCountryCode(event.target.value)}
               label="Country"
             >
+              <MenuItem key="ALL" value="ALL">
+                All
+              </MenuItem>
               {countries.map((value) => (
-                <MenuItem key={value.code} value={value.code}>{value.name}</MenuItem>
+                <MenuItem key={value.code} value={value.code}>
+                  {value.name}
+                </MenuItem>
               ))}
             </Select>
           </FormControl>
@@ -96,7 +106,9 @@ function App() {
               onChange={(event) => setNumResults(event.target.value)}
             >
               {numResultsOptions.map((value) => (
-                <MenuItem key={value} value={value}>{value}</MenuItem>
+                <MenuItem key={value} value={value}>
+                  {value}
+                </MenuItem>
               ))}
             </Select>
           </FormControl>
@@ -108,20 +120,29 @@ function App() {
             </Box>
           )}
           {!mostViewsLoading && (
-            <Grid container spacing={2}>
-              {mostViewsResults.map((result, index) => {
-                return (
-                  <Grid key={index} item xs={12} sm={6} md={4}>
-                    <ArticleCard
-                      title={result.article}
-                      views={result.views}
-                      rank={result.rank}
-                      onMoreInfo={onMoreInfo}
-                    />
-                  </Grid>
-                );
-              })}
-            </Grid>
+            <>
+              {mostViewsResults.length == 0 && (
+                <Box pt={4} display="flex" justifyContent="center">
+                  No results found.
+                </Box>
+              )}
+              {mostViewsResults.length != 0 && (
+                <Grid container spacing={2}>
+                  {mostViewsResults.map((result, index) => {
+                    return (
+                      <Grid key={index} item xs={12} sm={6} md={4}>
+                        <ArticleCard
+                          title={result.article}
+                          views={result.views}
+                          rank={result.rank}
+                          onMoreInfo={onMoreInfo}
+                        />
+                      </Grid>
+                    );
+                  })}
+                </Grid>
+              )}
+            </>
           )}
         </Box>
       </Paper>
@@ -130,8 +151,7 @@ function App() {
         open={moreInfoOpen}
         onClose={moreInfoOnClose}
         articleViewsResults={articleViewsResults}
-        articleTextResults={articleTextResults}
-        loading={articleViewsLoading || articleTextLoading}
+        loading={articleViewsLoading}
       />
     </>
   );
