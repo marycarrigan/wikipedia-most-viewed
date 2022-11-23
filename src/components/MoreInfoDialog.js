@@ -8,6 +8,21 @@ import {
 } from "@mui/material";
 import { DateTime } from "luxon";
 
+const ViewRow = ({ result }) => {
+  return (
+    <>
+      <Grid item xs={8}>
+        {DateTime.fromFormat(result.timestamp, "yyyyMMddhh").toFormat(
+          "MMMM dd, yyyy"
+        )}
+      </Grid>
+      <Grid item xs={4}>
+        {result.views}
+      </Grid>
+    </>
+  );
+};
+
 const MoreInfoDialog = ({
   article,
   open,
@@ -17,7 +32,7 @@ const MoreInfoDialog = ({
 }) => {
   return (
     <Dialog open={open} onClose={onClose}>
-      <DialogTitle>{article?.replaceAll("_", " ")}</DialogTitle>
+      <DialogTitle>{article?.article?.replaceAll("_", " ")}</DialogTitle>
       <DialogContent>
         {loading && (
           <Box display="flex" justifyContent="center" alignItems="center">
@@ -32,17 +47,8 @@ const MoreInfoDialog = ({
             <Grid sx={{ fontWeight: "fontWeightMedium" }} item xs={4}>
               Views
             </Grid>
-            {articleViewsResults.map((result) => (
-              <>
-                <Grid item xs={8}>
-                  {DateTime.fromFormat(result.timestamp, "yyyyMMddhh").toFormat(
-                    "MMMM dd, yyyy"
-                  )}
-                </Grid>
-                <Grid item xs={4}>
-                  {result.views}
-                </Grid>
-              </>
+            {articleViewsResults.map((result, index) => (
+              <ViewRow key={index} result={result} />
             ))}
           </Grid>
         )}

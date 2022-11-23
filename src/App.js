@@ -94,9 +94,6 @@ function App() {
                   onChange={(event) => setCountryCode(event.target.value)}
                   label="Country"
                 >
-                  <MenuItem key="ALL" value="ALL">
-                    All
-                  </MenuItem>
                   {countries.map((value) => (
                     <MenuItem key={value.code} value={value.code}>
                       {value.name}
@@ -140,9 +137,7 @@ function App() {
                     return (
                       <Grid key={index} item xs={12} sm={6} md={4}>
                         <ArticleCard
-                          title={result.article}
-                          views={result.views}
-                          rank={result.rank}
+                          result={result}
                           onMoreInfo={onMoreInfo}
                         />
                       </Grid>

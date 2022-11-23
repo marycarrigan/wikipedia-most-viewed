@@ -29,8 +29,7 @@ const useArticleViewsGet = () => {
     setLoading(true);
     const firstOfMonth = DateTime.local().startOf('month');
     const lastOfMonth = DateTime.local().endOf('month');
-
-    const url = `https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/all-agents/${article}/daily/${firstOfMonth.toFormat("yyyyLLdd")}00/${lastOfMonth.toFormat("yyyyLLdd")}00`;
+    const url = `https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/${article.project || "en.wikipedia"}/all-access/all-agents/${article.article}/daily/${firstOfMonth.toFormat("yyyyLLdd")}00/${lastOfMonth.toFormat("yyyyLLdd")}00`;
     try {
       const response = await axios.get(url);
       const top3days = findTop3DaysOfViews(response.data.items);

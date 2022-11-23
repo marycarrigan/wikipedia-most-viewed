@@ -1,5 +1,6 @@
 // https://www.codeinwp.com/snippets/list-of-all-countries-html-select-javascript-and-json-format/#countries-json
 const countries = [
+  {"name": "All", "code": "ALL"},
   {"name": "Albania", "code": "AL"},
   {"name": "Åland Islands", "code": "AX"},
   {"name": "Algeria", "code": "DZ"},
