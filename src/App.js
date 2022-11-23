@@ -68,50 +68,58 @@ function App() {
       </AppBar>
       <Paper sx={{ padding: 4 }}>
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <LocalizationProvider dateAdapter={AdapterLuxon}>
-            <DatePicker
-              disableFuture
-              label="Date"
-              openTo="year"
-              views={["year", "month", "day"]}
-              value={date}
-              onChange={(newValue) => {
-                setDate(newValue);
-              }}
-              disableMaskedInput
-              onClose={() => doGetMostViews()}
-              renderInput={(params) => <TextField {...params} />}
-            />
-          </LocalizationProvider>
-          <FormControl>
-            <InputLabel>Country</InputLabel>
-            <Select
-              value={countryCode}
-              onChange={(event) => setCountryCode(event.target.value)}
-              label="Country"
-            >
-              <MenuItem key="ALL" value="ALL">
-                All
-              </MenuItem>
-              {countries.map((value) => (
-                <MenuItem key={value.code} value={value.code}>
-                  {value.name}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-          <FormControl>
-            <Select
-              value={numResults}
-              onChange={(event) => setNumResults(event.target.value)}
-            >
-              {numResultsOptions.map((value) => (
-                <MenuItem key={value} value={value}>
-                  {value}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={5}>
+              <LocalizationProvider dateAdapter={AdapterLuxon}>
+                <DatePicker
+                  disableFuture
+                  label="Date"
+                  openTo="year"
+                  views={["year", "month", "day"]}
+                  value={date}
+                  onChange={(newValue) => {
+                    setDate(newValue);
+                  }}
+                  disableMaskedInput
+                  onClose={() => doGetMostViews()}
+                  renderInput={(params) => <TextField fullWidth {...params} />}
+                />
+              </LocalizationProvider>
+            </Grid>
+            <Grid item xs={8} md={5}>
+              <FormControl fullWidth>
+                <InputLabel>Country</InputLabel>
+                <Select
+                  value={countryCode}
+                  onChange={(event) => setCountryCode(event.target.value)}
+                  label="Country"
+                >
+                  <MenuItem key="ALL" value="ALL">
+                    All
+                  </MenuItem>
+                  {countries.map((value) => (
+                    <MenuItem key={value.code} value={value.code}>
+                      {value.name}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid item xs={4} md={2}>
+              <FormControl fullWidth>
+                <Select
+                  value={numResults}
+                  onChange={(event) => setNumResults(event.target.value)}
+                >
+                  {numResultsOptions.map((value) => (
+                    <MenuItem key={value} value={value}>
+                      {value}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </Grid>
+          </Grid>
         </Box>
         <Box pt={2}>
           {mostViewsLoading && (
