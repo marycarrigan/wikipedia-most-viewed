@@ -9,6 +9,7 @@ import {
   Select,
   MenuItem,
   FormControl,
+  InputLabel,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { DatePicker } from "@mui/x-date-pickers";
@@ -20,6 +21,7 @@ import ArticleCard from "./components/ArticleCard";
 import MoreInfoDialog from "./components/MoreInfoDialog";
 import useArticleViewsGet from "./hooks/useArticleViewsGet";
 import useArticleTextGet from "./hooks/useArticleTextGet";
+import countries from "./countries";
 
 function App() {
   const numResultsOptions = [25, 50, 75, 100, 200];
@@ -28,10 +30,11 @@ function App() {
 
   const [date, setDate] = useState(yesterday);
   const [numResults, setNumResults] = useState(100);
+  const [countryCode, setCountryCode] = useState("");
   const [selectedArticle, setSelectedArticle] = useState("");
   const [moreInfoOpen, setMoreInfoOpen] = useState(false);
 
-  const { results: mostViewsResults, doGet: doGetMostViews, loading: mostViewsLoading } = useMostViewedGet(date, numResults);
+  const { results: mostViewsResults, doGet: doGetMostViews, loading: mostViewsLoading } = useMostViewedGet(date, numResults, countryCode);
   const { results: articleViewsResults, loading: articleViewsLoading, doGet: doGetArticleViews } = useArticleViewsGet(selectedArticle);
   const { results: articleTextResults, loading: articleTextLoading, doGet: doGetArticleText } = useArticleTextGet(selectedArticle);
 
@@ -75,6 +78,18 @@ function App() {
               renderInput={(params) => <TextField {...params} />}
             />
           </LocalizationProvider>
+          <FormControl>
+            <InputLabel>Country</InputLabel>
+            <Select
+              value={countryCode}
+              onChange={(event) => setCountryCode(event.target.value)}
+              label="Country"
+            >
+              {countries.map((value) => (
+                <MenuItem key={value.code} value={value.code}>{value.name}</MenuItem>
+              ))}
+            </Select>
+          </FormControl>
           <FormControl>
             <Select
               value={numResults}

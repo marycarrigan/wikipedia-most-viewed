@@ -1,6 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
 
+/**
+ * Ultimately, I decided not to use this as I encountered an issue with wikipedia's CORS policy blocking
+ * development - I used a Chrome extension for some testing but as that convoluted the set up, 
+ * I didn't think it was a viable solution
+ * 
+ */
 const useArticleTextGet = () => {
   const [results, setResults] = useState("");
   const [loading, setLoading] = useState(false);
@@ -14,7 +20,6 @@ const useArticleTextGet = () => {
       const t = await response.json();
       setResults(Object.values(t.query.pages)[0].extract);
     } catch (error) {
-      // make improvements for error handling here
       console.error(error);
       setResults("");
     } finally {
