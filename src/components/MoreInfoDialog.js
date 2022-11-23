@@ -5,6 +5,7 @@ import {
   Grid,
   Box,
   CircularProgress,
+  Divider,
 } from "@mui/material";
 import { DateTime } from "luxon";
 
@@ -40,17 +41,30 @@ const MoreInfoDialog = ({
           </Box>
         )}
         {!loading && (
-          <Grid container spacing={2}>
-            <Grid sx={{ fontWeight: "fontWeightMedium" }} item xs={8}>
-              Date
-            </Grid>
-            <Grid sx={{ fontWeight: "fontWeightMedium" }} item xs={4}>
-              Views
-            </Grid>
-            {articleViewsResults.map((result, index) => (
-              <ViewRow key={index} result={result} />
-            ))}
-          </Grid>
+          <>
+            <Box display="flex" justifyContent="center">
+              Most Viewed Days in {DateTime.local().monthLong}
+            </Box>
+            <Box py={2}>
+              <Divider />
+            </Box>
+            {articleViewsResults.length !== 0 && (
+              <Grid container spacing={2}>
+                <Grid sx={{ fontWeight: "fontWeightMedium" }} item xs={8}>
+                  Date
+                </Grid>
+                <Grid sx={{ fontWeight: "fontWeightMedium" }} item xs={4}>
+                  Views
+                </Grid>
+                {articleViewsResults.map((result, index) => (
+                  <ViewRow key={index} result={result} />
+                ))}
+              </Grid>
+            )}
+            {articleViewsResults.length === 0 && (
+              <Box>No information about top views this month available.</Box>
+            )}
+          </>
         )}
       </DialogContent>
     </Dialog>

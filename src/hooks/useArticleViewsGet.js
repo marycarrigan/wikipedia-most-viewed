@@ -35,8 +35,6 @@ const useArticleViewsGet = () => {
       const top3days = findTop3DaysOfViews(response.data.items);
       setResults(top3days);
     } catch (error) {
-      // make improvements for error handling here
-      console.error(error);
       setResults([]);
     } finally {
       setLoading(false);

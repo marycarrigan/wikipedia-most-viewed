@@ -1,7 +1,6 @@
 import {
   AppBar,
   Box,
-  CircularProgress,
   Grid,
   Paper,
   TextField,
@@ -15,12 +14,10 @@ import { useEffect, useState } from "react";
 import { DatePicker } from "@mui/x-date-pickers";
 import { AdapterLuxon } from "@mui/x-date-pickers/AdapterLuxon";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import useMostViewedGet from "./hooks/useMostViewedGet";
+import { useMostViewedGet, useArticleViewsGet } from "./hooks";
 import { DateTime } from "luxon";
-import ArticleCard from "./components/ArticleCard";
-import MoreInfoDialog from "./components/MoreInfoDialog";
-import useArticleViewsGet from "./hooks/useArticleViewsGet";
 import countries from "./countries";
+import { ArticleCards, MoreInfoDialog } from "./components";
 
 function App() {
   const numResultsOptions = [25, 50, 75, 100, 200];
@@ -118,36 +115,7 @@ function App() {
             </Grid>
           </Grid>
         </Box>
-        <Box pt={2}>
-          {mostViewsLoading && (
-            <Box display="flex" justifyContent="center" alignItems="center">
-              <CircularProgress color="secondary" />
-            </Box>
-          )}
-          {!mostViewsLoading && (
-            <>
-              {mostViewsResults.length == 0 && (
-                <Box pt={4} display="flex" justifyContent="center">
-                  No results found.
-                </Box>
-              )}
-              {mostViewsResults.length != 0 && (
-                <Grid container spacing={2}>
-                  {mostViewsResults.map((result, index) => {
-                    return (
-                      <Grid key={index} item xs={12} sm={6} md={4}>
-                        <ArticleCard
-                          result={result}
-                          onMoreInfo={onMoreInfo}
-                        />
-                      </Grid>
-                    );
-                  })}
-                </Grid>
-              )}
-            </>
-          )}
-        </Box>
+        <ArticleCards articles={mostViewsResults} loading={mostViewsLoading} onMoreInfo={onMoreInfo}/>
       </Paper>
       <MoreInfoDialog
         article={selectedArticle}
