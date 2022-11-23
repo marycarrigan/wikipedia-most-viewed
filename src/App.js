@@ -19,6 +19,7 @@ import { DateTime } from "luxon";
 import ArticleCard from "./components/ArticleCard";
 import MoreInfoDialog from "./components/MoreInfoDialog";
 import useArticleViewsGet from "./hooks/useArticleViewsGet";
+import useArticleTextGet from "./hooks/useArticleTextGet";
 
 function App() {
   const numResultsOptions = [25, 50, 75, 100, 200];
@@ -31,7 +32,8 @@ function App() {
   const [moreInfoOpen, setMoreInfoOpen] = useState(false);
 
   const { results: mostViewsResults, doGet: doGetMostViews, loading: mostViewsLoading } = useMostViewedGet(date, numResults);
-  const { results: articleResults, loading: articleLoading, doGet: doGetArticle } = useArticleViewsGet(selectedArticle);
+  const { results: articleViewsResults, loading: articleViewsLoading, doGet: doGetArticleViews } = useArticleViewsGet(selectedArticle);
+  const { results: articleTextResults, loading: articleTextLoading, doGet: doGetArticleText } = useArticleTextGet(selectedArticle);
 
   useEffect(() => {
     doGetMostViews();
@@ -45,7 +47,8 @@ function App() {
   const onMoreInfo = (article) => {
     setSelectedArticle(article);
     setMoreInfoOpen(true);
-    doGetArticle(article);
+    doGetArticleViews(article);
+    doGetArticleText(article);
   };
 
   return (
@@ -111,7 +114,9 @@ function App() {
         article={selectedArticle}
         open={moreInfoOpen}
         onClose={moreInfoOnClose}
-        articleResults={articleResults}
+        articleViewsResults={articleViewsResults}
+        articleTextResults={articleTextResults}
+        loading={articleViewsLoading || articleTextLoading}
       />
     </>
   );
