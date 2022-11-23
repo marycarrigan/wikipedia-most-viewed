@@ -1,54 +1,118 @@
 import {
+  AppBar,
   Box,
+  CircularProgress,
+  Grid,
   Paper,
   TextField,
-  Card,
-  CardContent,
-  CardActions,
-  Button,
+  Toolbar,
+  Select,
+  MenuItem,
+  FormControl,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DatePicker } from "@mui/x-date-pickers";
 import { AdapterLuxon } from "@mui/x-date-pickers/AdapterLuxon";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import useMostViewedGet from "./hooks/useMostViewedGet";
+import { DateTime } from "luxon";
+import ArticleCard from "./components/ArticleCard";
+import MoreInfoDialog from "./components/MoreInfoDialog";
+import useArticleViewsGet from "./hooks/useArticleViewsGet";
 
 function App() {
-  const [date, setDate] = useState(null);
-  const { results, doGet } = useMostViewedGet(date, 100);
-  console.log(results);
+  const numResultsOptions = [25, 50, 75, 100, 200];
+
+  const yesterday = DateTime.now().plus({ days: -1 });
+
+  const [date, setDate] = useState(yesterday);
+  const [numResults, setNumResults] = useState(100);
+  const [selectedArticle, setSelectedArticle] = useState("");
+  const [moreInfoOpen, setMoreInfoOpen] = useState(false);
+
+  const { results: mostViewsResults, doGet: doGetMostViews, loading: mostViewsLoading } = useMostViewedGet(date, numResults);
+  const { results: articleResults, loading: articleLoading, doGet: doGetArticle } = useArticleViewsGet(selectedArticle);
+
+  useEffect(() => {
+    doGetMostViews();
+  }, []);
+
+  const moreInfoOnClose = () => {
+    setSelectedArticle("");
+    setMoreInfoOpen(false);
+  };
+
+  const onMoreInfo = (article) => {
+    setSelectedArticle(article);
+    setMoreInfoOpen(true);
+    doGetArticle(article);
+  };
+
   return (
     <>
-      <Box p={3}>Take Home Grow Assessment</Box>
-      <Paper elevation={3} sx={{ padding: 4 }}>
-        <LocalizationProvider dateAdapter={AdapterLuxon}>
-          <DatePicker
-            disableFuture
-            label="Date"
-            openTo="year"
-            views={["year", "month", "day"]}
-            value={date}
-            onChange={(newValue) => {
-              setDate(newValue);
-            }}
-            disableMaskedInput
-            onClose={() => doGet()}
-            renderInput={(params) => <TextField {...params} />}
-          />
-        </LocalizationProvider>
-        {results.map((result, index) => {
-          return (
-            <Card key={index}>
-              <CardContent>
-                <Box p={2}>
-                  <Box fontWeight="fontWeightBold">{result.article}</Box>
-                  <Box fontSize=".75rem"> {result.views} views</Box>
-                </Box>
-              </CardContent>
-            </Card>
-          );
-        })}
+      <AppBar position="sticky">
+        <Toolbar>
+          <Box p={3}>Wikipedia: Most Viewed Pages</Box>
+        </Toolbar>
+      </AppBar>
+      <Paper sx={{ padding: 4 }}>
+        <Box display="flex" justifyContent="space-between" alignItems="center">
+          <LocalizationProvider dateAdapter={AdapterLuxon}>
+            <DatePicker
+              disableFuture
+              label="Date"
+              openTo="year"
+              views={["year", "month", "day"]}
+              value={date}
+              onChange={(newValue) => {
+                setDate(newValue);
+              }}
+              disableMaskedInput
+              onClose={() => doGetMostViews()}
+              renderInput={(params) => <TextField {...params} />}
+            />
+          </LocalizationProvider>
+          <FormControl>
+            <Select
+              value={numResults}
+              onChange={(event) => setNumResults(event.target.value)}
+            >
+              {numResultsOptions.map((value) => (
+                <MenuItem key={value} value={value}>{value}</MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Box>
+        <Box pt={2}>
+          {mostViewsLoading && (
+            <Box display="flex" justifyContent="center" alignItems="center">
+              <CircularProgress color="secondary" />
+            </Box>
+          )}
+          {!mostViewsLoading && (
+            <Grid container spacing={2}>
+              {mostViewsResults.map((result, index) => {
+                return (
+                  <Grid key={index} item xs={12} sm={6} md={4}>
+                    <ArticleCard
+                      title={result.article}
+                      views={result.views}
+                      rank={result.rank}
+                      onMoreInfo={onMoreInfo}
+                    />
+                  </Grid>
+                );
+              })}
+            </Grid>
+          )}
+        </Box>
       </Paper>
+      <MoreInfoDialog
+        article={selectedArticle}
+        open={moreInfoOpen}
+        onClose={moreInfoOnClose}
+        articleResults={articleResults}
+      />
     </>
   );
 }
