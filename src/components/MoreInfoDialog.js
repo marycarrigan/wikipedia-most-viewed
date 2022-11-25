@@ -8,6 +8,7 @@ import {
   Divider,
 } from "@mui/material";
 import { DateTime } from "luxon";
+import React from "react";
 
 const ViewRow = ({ result }) => {
   return (
