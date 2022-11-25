@@ -11,10 +11,10 @@ const findTop3DaysOfViews = (results) => {
             top3[2] = top3[1]
             top3[1] = top3[0]
             top3[0] = element
-        }else if(element.views > top3[1].views && element.views != top3[0].views){
+        }else if(element.views > top3[1].views && element.views !== top3[0].views){
             top3[2] = top3[1]
             top3[1] = element
-        }else if(element.views > top3[2] && element.views != top3[1].views){
+        }else if(element.views > top3[2] && element.views !== top3[1].views){
             top3[2] = element
         }
     })

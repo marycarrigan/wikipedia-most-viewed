@@ -10,7 +10,7 @@ import {
   FormControl,
   InputLabel,
 } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { DatePicker } from "@mui/x-date-pickers";
 import { AdapterLuxon } from "@mui/x-date-pickers/AdapterLuxon";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -30,20 +30,14 @@ function App() {
   const [selectedArticle, setSelectedArticle] = useState("");
   const [moreInfoOpen, setMoreInfoOpen] = useState(false);
 
-  const {
-    results: mostViewsResults,
-    doGet: doGetMostViews,
-    loading: mostViewsLoading,
-  } = useMostViewedGet(date, numResults, countryCode);
+  const { results: mostViewsResults, loading: mostViewsLoading } =
+    useMostViewedGet(date, numResults, countryCode);
+
   const {
     results: articleViewsResults,
     loading: articleViewsLoading,
     doGet: doGetArticleViews,
   } = useArticleViewsGet(selectedArticle);
-
-  useEffect(() => {
-    doGetMostViews();
-  }, []);
 
   const moreInfoOnClose = () => {
     setSelectedArticle("");
@@ -78,7 +72,6 @@ function App() {
                     setDate(newValue);
                   }}
                   disableMaskedInput
-                  onClose={() => doGetMostViews()}
                   renderInput={(params) => <TextField fullWidth {...params} />}
                 />
               </LocalizationProvider>
@@ -115,7 +108,11 @@ function App() {
             </Grid>
           </Grid>
         </Box>
-        <ArticleCards articles={mostViewsResults} loading={mostViewsLoading} onMoreInfo={onMoreInfo}/>
+        <ArticleCards
+          articles={mostViewsResults}
+          loading={mostViewsLoading}
+          onMoreInfo={onMoreInfo}
+        />
       </Paper>
       <MoreInfoDialog
         article={selectedArticle}
