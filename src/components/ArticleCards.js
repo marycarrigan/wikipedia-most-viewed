@@ -1,5 +1,6 @@
 import { Box, CircularProgress, Grid } from "@mui/material";
 import { ArticleCard } from "./";
+import * as React from "react";
 
 const ArticleCards = ({ articles, loading, onMoreInfo }) => {
   return (

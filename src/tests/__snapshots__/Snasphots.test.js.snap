@@ -1,0 +1,402 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders article card 1`] = `
+Array [
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".css-1gdfwye-MuiCard-root{overflow:hidden;}",
+      }
+    }
+    data-emotion="css 1gdfwye-MuiCard-root"
+  />,
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".css-fky5tw-MuiPaper-root-MuiCard-root{background-color:#fff;color:rgba(0, 0, 0, 0.87);-webkit-transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border-radius:4px;box-shadow:0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);overflow:hidden;}",
+      }
+    }
+    data-emotion="css fky5tw-MuiPaper-root-MuiCard-root"
+  />,
+  <div
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiCard-root css-fky5tw-MuiPaper-root-MuiCard-root"
+  >
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-46bh2p-MuiCardContent-root{padding:16px;}.css-46bh2p-MuiCardContent-root:last-child{padding-bottom:24px;}",
+        }
+      }
+      data-emotion="css 46bh2p-MuiCardContent-root"
+    />
+    <div
+      className="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+    >
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-16m3jxf-MuiTypography-root{margin:0;font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:400;font-size:1rem;line-height:1.5;letter-spacing:0.00938em;margin-bottom:0.35em;color:rgba(0, 0, 0, 0.6);font-size:14px;}",
+          }
+        }
+        data-emotion="css 16m3jxf-MuiTypography-root"
+      />
+      <p
+        className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-16m3jxf-MuiTypography-root"
+      >
+        Rank: 
+        1
+      </p>
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-1su4552-MuiTypography-root{margin:0;font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:400;font-size:1.5rem;line-height:1.334;letter-spacing:0em;margin-bottom:4px;}",
+          }
+        }
+        data-emotion="css 1su4552-MuiTypography-root"
+      />
+      <div
+        className="MuiTypography-root MuiTypography-h5 css-1su4552-MuiTypography-root"
+      >
+        Test Article
+      </div>
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-9eg9l8-MuiTypography-root{margin:0;font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:400;font-size:1rem;line-height:1.5;letter-spacing:0.00938em;color:rgba(0, 0, 0, 0.6);margin-bottom:12px;}",
+          }
+        }
+        data-emotion="css 9eg9l8-MuiTypography-root"
+      />
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-9eg9l8-MuiTypography-root"
+      >
+        100
+         views
+      </p>
+    </div>
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-1t6e9jv-MuiCardActions-root{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:8px;}.css-1t6e9jv-MuiCardActions-root>:not(:first-of-type){margin-left:8px;}",
+        }
+      }
+      data-emotion="css 1t6e9jv-MuiCardActions-root"
+    />
+    <div
+      className="MuiCardActions-root MuiCardActions-spacing css-1t6e9jv-MuiCardActions-root"
+    >
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-jl17tt-MuiButton-root{font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:500;font-size:0.8125rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:4px 5px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;color:#1976d2;}.css-jl17tt-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);}@media (hover: none){.css-jl17tt-MuiButton-root:hover{background-color:transparent;}}.css-jl17tt-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);}",
+          }
+        }
+        data-emotion="css jl17tt-MuiButton-root"
+      />
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-1knaqv7-MuiButtonBase-root-MuiButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:500;font-size:0.8125rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:4px 5px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;color:#1976d2;}.css-1knaqv7-MuiButtonBase-root-MuiButton-root::-moz-focus-inner{border-style:none;}.css-1knaqv7-MuiButtonBase-root-MuiButton-root.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-1knaqv7-MuiButtonBase-root-MuiButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-1knaqv7-MuiButtonBase-root-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);}@media (hover: none){.css-1knaqv7-MuiButtonBase-root-MuiButton-root:hover{background-color:transparent;}}.css-1knaqv7-MuiButtonBase-root-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);}",
+          }
+        }
+        data-emotion="css 1knaqv7-MuiButtonBase-root-MuiButton-root"
+      />
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall css-1knaqv7-MuiButtonBase-root-MuiButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        More Info
+      </button>
+    </div>
+  </div>,
+]
+`;
+
+exports[`renders article cards loading 1`] = `
+Array [
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".css-1v3caum{padding-top:16px;}",
+      }
+    }
+    data-emotion="css 1v3caum"
+  />,
+  <div
+    className="MuiBox-root css-1v3caum"
+  >
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-1n2mv2k{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}",
+        }
+      }
+      data-emotion="css 1n2mv2k"
+    />
+    <div
+      className="MuiBox-root css-1n2mv2k"
+    >
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-18lrjg1-MuiCircularProgress-root{display:inline-block;color:#1976d2;-webkit-animation:animation-61bdi0 1.4s linear infinite;animation:animation-61bdi0 1.4s linear infinite;}@-webkit-keyframes animation-61bdi0{0%{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}@keyframes animation-61bdi0{0%{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}",
+          }
+        }
+        data-emotion="css 18lrjg1-MuiCircularProgress-root animation-61bdi0"
+      />
+      <span
+        className="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-18lrjg1-MuiCircularProgress-root"
+        role="progressbar"
+        style={
+          Object {
+            "height": 40,
+            "width": 40,
+          }
+        }
+      >
+        <style
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": ".css-1idz92c-MuiCircularProgress-svg{display:block;}",
+            }
+          }
+          data-emotion="css 1idz92c-MuiCircularProgress-svg"
+        />
+        <svg
+          className="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+          viewBox="22 22 44 44"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": ".css-176wh8e-MuiCircularProgress-circle{stroke:currentColor;stroke-dasharray:80px,200px;stroke-dashoffset:0;-webkit-animation:animation-1p2h4ri 1.4s ease-in-out infinite;animation:animation-1p2h4ri 1.4s ease-in-out infinite;}@-webkit-keyframes animation-1p2h4ri{0%{stroke-dasharray:1px,200px;stroke-dashoffset:0;}50%{stroke-dasharray:100px,200px;stroke-dashoffset:-15px;}100%{stroke-dasharray:100px,200px;stroke-dashoffset:-125px;}}@keyframes animation-1p2h4ri{0%{stroke-dasharray:1px,200px;stroke-dashoffset:0;}50%{stroke-dasharray:100px,200px;stroke-dashoffset:-15px;}100%{stroke-dasharray:100px,200px;stroke-dashoffset:-125px;}}",
+              }
+            }
+            data-emotion="css 176wh8e-MuiCircularProgress-circle animation-1p2h4ri"
+          />
+          <circle
+            className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+            cx={44}
+            cy={44}
+            fill="none"
+            r={20.2}
+            strokeWidth={3.6}
+            style={Object {}}
+          />
+        </svg>
+      </span>
+    </div>
+  </div>,
+]
+`;
+
+exports[`renders article cards with results 1`] = `
+Array [
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".css-1v3caum{padding-top:16px;}",
+      }
+    }
+    data-emotion="css 1v3caum"
+  />,
+  <div
+    className="MuiBox-root css-1v3caum"
+  >
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-mhc70k-MuiGrid-root{box-sizing:border-box;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;width:100%;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;margin-top:-16px;width:calc(100% + 16px);margin-left:-16px;}.css-mhc70k-MuiGrid-root>.MuiGrid-item{padding-top:16px;}.css-mhc70k-MuiGrid-root>.MuiGrid-item{padding-left:16px;}",
+        }
+      }
+      data-emotion="css mhc70k-MuiGrid-root"
+    />
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
+    >
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-11l5t4l-MuiGrid-root{box-sizing:border-box;margin:0;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-basis:100%;-ms-flex-preferred-size:100%;flex-basis:100%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:100%;}@media (min-width:600px){.css-11l5t4l-MuiGrid-root{-webkit-flex-basis:50%;-ms-flex-preferred-size:50%;flex-basis:50%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:50%;}}@media (min-width:900px){.css-11l5t4l-MuiGrid-root{-webkit-flex-basis:33.333333%;-ms-flex-preferred-size:33.333333%;flex-basis:33.333333%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:33.333333%;}}@media (min-width:1200px){.css-11l5t4l-MuiGrid-root{-webkit-flex-basis:33.333333%;-ms-flex-preferred-size:33.333333%;flex-basis:33.333333%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:33.333333%;}}@media (min-width:1536px){.css-11l5t4l-MuiGrid-root{-webkit-flex-basis:33.333333%;-ms-flex-preferred-size:33.333333%;flex-basis:33.333333%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:33.333333%;}}",
+          }
+        }
+        data-emotion="css 11l5t4l-MuiGrid-root"
+      />
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4 css-11l5t4l-MuiGrid-root"
+      >
+        <style
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": ".css-1gdfwye-MuiCard-root{overflow:hidden;}",
+            }
+          }
+          data-emotion="css 1gdfwye-MuiCard-root"
+        />
+        <style
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": ".css-fky5tw-MuiPaper-root-MuiCard-root{background-color:#fff;color:rgba(0, 0, 0, 0.87);-webkit-transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border-radius:4px;box-shadow:0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);overflow:hidden;}",
+            }
+          }
+          data-emotion="css fky5tw-MuiPaper-root-MuiCard-root"
+        />
+        <div
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiCard-root css-fky5tw-MuiPaper-root-MuiCard-root"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": ".css-46bh2p-MuiCardContent-root{padding:16px;}.css-46bh2p-MuiCardContent-root:last-child{padding-bottom:24px;}",
+              }
+            }
+            data-emotion="css 46bh2p-MuiCardContent-root"
+          />
+          <div
+            className="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+          >
+            <style
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": ".css-16m3jxf-MuiTypography-root{margin:0;font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:400;font-size:1rem;line-height:1.5;letter-spacing:0.00938em;margin-bottom:0.35em;color:rgba(0, 0, 0, 0.6);font-size:14px;}",
+                }
+              }
+              data-emotion="css 16m3jxf-MuiTypography-root"
+            />
+            <p
+              className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-16m3jxf-MuiTypography-root"
+            >
+              Rank: 
+              1
+            </p>
+            <style
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": ".css-1su4552-MuiTypography-root{margin:0;font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:400;font-size:1.5rem;line-height:1.334;letter-spacing:0em;margin-bottom:4px;}",
+                }
+              }
+              data-emotion="css 1su4552-MuiTypography-root"
+            />
+            <div
+              className="MuiTypography-root MuiTypography-h5 css-1su4552-MuiTypography-root"
+            >
+              Test Article
+            </div>
+            <style
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": ".css-9eg9l8-MuiTypography-root{margin:0;font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:400;font-size:1rem;line-height:1.5;letter-spacing:0.00938em;color:rgba(0, 0, 0, 0.6);margin-bottom:12px;}",
+                }
+              }
+              data-emotion="css 9eg9l8-MuiTypography-root"
+            />
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-9eg9l8-MuiTypography-root"
+            >
+              100
+               views
+            </p>
+          </div>
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": ".css-1t6e9jv-MuiCardActions-root{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:8px;}.css-1t6e9jv-MuiCardActions-root>:not(:first-of-type){margin-left:8px;}",
+              }
+            }
+            data-emotion="css 1t6e9jv-MuiCardActions-root"
+          />
+          <div
+            className="MuiCardActions-root MuiCardActions-spacing css-1t6e9jv-MuiCardActions-root"
+          >
+            <style
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": ".css-jl17tt-MuiButton-root{font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:500;font-size:0.8125rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:4px 5px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;color:#1976d2;}.css-jl17tt-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);}@media (hover: none){.css-jl17tt-MuiButton-root:hover{background-color:transparent;}}.css-jl17tt-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);}",
+                }
+              }
+              data-emotion="css jl17tt-MuiButton-root"
+            />
+            <button
+              className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall css-1knaqv7-MuiButtonBase-root-MuiButton-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              More Info
+              <style
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": ".css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}",
+                  }
+                }
+                data-emotion="css 8je8zh-MuiTouchRipple-root"
+              />
+              <span
+                className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`renders article cards without results 1`] = `
+Array [
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".css-1v3caum{padding-top:16px;}",
+      }
+    }
+    data-emotion="css 1v3caum"
+  />,
+  <div
+    className="MuiBox-root css-1v3caum"
+  >
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-tfmytu{padding-top:32px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;}",
+        }
+      }
+      data-emotion="css tfmytu"
+    />
+    <div
+      className="MuiBox-root css-tfmytu"
+    >
+      No results found.
+    </div>
+  </div>,
+]
+`;
